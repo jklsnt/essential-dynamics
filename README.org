@@ -1,0 +1,20 @@
+* protein structural and dynamics analysis
+Houjun L., David F., Dhruv C., Ella L.
+
+This package of Python scripts attempts to analyze the dynamics of proteins based on their structure. We hope to show how sequence-level structural changes projects onto the ultimate tertiary-structure molecular dynamics behavior (and therefore eventually the function) of the proteins.
+
+To achieve this, we have to be able to analyze the primary behavior of the protein from simply its sequence. This is done in three steps:
+
+1. The given re-engineered sequence is re-folded using [[https://github.com/facebookresearch/esm][ESMFold]], to yield a PDB structure
+2. The sequence is then analyzed for its general dynamic behavior via the AMBER force field, via =openmm=, to produce a Fortran DCD trajectory
+3. Finally, the correlations between primary motions per-frame, per-atom in the DCD trajectory is calculated; with its right eigenvalues used for PCA analysis for primary behavior via =mdanalysis=; the first component (usually accounting for $70\%$ to $90\%$ of the variance) is then projected back onto the /backbone/ of the protein to create a new set of PDB and DCD files
+
+To achieve all of this, we depend on =esm=, =mdanalysis=, =openmm=, =openmm-setup=, which all can be installed using Conda.
+
+The files in this repo represent the work on each step:
+
+1. TODO --- ESM folding
+2. =run_openmm_simulation.py= --- molecular dynamics simulations and its initial conditions
+3. =pca_analysis.py= --- PCA analysis of a trajectory, along with projection onto the backbone
+
+
