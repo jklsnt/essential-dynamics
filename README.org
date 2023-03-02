@@ -13,8 +13,8 @@ To achieve all of this, we depend on =esm=, =mdanalysis=, =openmm=, =openmm-setu
 
 The files in this repo represent the work on each step:
 
-1. TODO --- ESM folding
-2. =run_openmm_simulation.py= --- molecular dynamics simulations and its initial conditions
-3. =pca_analysis.py= --- PCA analysis of a trajectory, along with projection onto the backbone
+1. =esm/= — folder containing ESM run script and corresponding Dockerfile
+2. =run_openmm_simulation.py= — molecular dynamics simulations and its initial conditions
+3. =pca_analysis.py= — PCA analysis of a trajectory, along with projection onto the backbone
 
 

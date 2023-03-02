@@ -1,0 +1,2 @@
+build:
+	sudo docker build -t esm-test . && sudo docker run -it --gpus all -v $(pwd)/out:/out -v $(pwd)/cache:/root/.cache esm-test
